@@ -26,15 +26,21 @@ html,body{
     height: 100%;
     width: 100%;
 }
+
+body {
+    overflow-x: hidden;
+}
 .cursor{
     width: 2.5vw;
     height: 2.5vw;
-    position: fixed;
     border: 2px solid rgba(255, 255, 255, 0.903);
-    z-index: 99;
+    position: fixed;
     border-radius: 50%;
-    mix-blend-mode: difference;
-    transform: translate(-50%,-50%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  mix-blend-mode: difference; 
+  transition: transform 0.1s ease;
 }
 .loader{
     width: 100%;
@@ -116,8 +122,10 @@ html,body{
 
 .main{
     position: relative;
-    background-color: #111;
+        /* z-index: 99; */
+         background-color: #151515;
 }
+
 .page1{
     height: 100vh;
     width: 100%;
@@ -142,8 +150,8 @@ html,body{
 }
 
 .hero{
-    width: 70%;
-    margin-left: 28vw;
+    width: 80%;
+    padding-left: 28vw;
     height: fit-content;
     overflow: hidden;
     display: flex;
@@ -158,9 +166,20 @@ html,body{
     text-transform: uppercase;
     line-height: 7.3vw;
     font-weight: 600;
+    position: relative;
 }
+#hero1 ::before{
+    content: "01";
+    position: absolute;
+    font-size: 3vw;
+    font-family: silk;
+    left: -21%;
+    font-weight: 500;
+    top: -10%;
+}
+
 .hero h2 {
-      font-size: 7.3vw;
+      font-size: 6.9vw;
     text-transform: uppercase;
     line-height: 7.3vw;
     font-weight: 600;
@@ -205,13 +224,13 @@ html,body{
 }
 
 .video-cursor{
-    height: 7vw;
-    width: 7vw;
+    height: 10vw;
+    width: 10vw;
     background-color: #FFA63D;
     border-radius: 50%;
     position: absolute;
-    top: -10%;
-    right:10%;
+    top: -15%;
+    right:18%;
     z-index: 99;
     display: flex;
     align-items: center;
@@ -225,7 +244,7 @@ html,body{
 .page3{
     width: 100%;
     height: 100vh;
-    background-color: #656565;
+    background-color: #151515;
     position: relative;
 }
 
@@ -247,6 +266,16 @@ html,body{
     text-transform: uppercase;
     letter-spacing: 0.3vw;
      margin-bottom: 5vw;
+     position: relative;
+}
+.p4-content h1::before{
+    content: "03";
+    position: absolute;
+    font-size: 3vw;
+    font-family: silk;
+    left: -15%;
+    font-weight: 600;
+    top: 7%;
 }
 .p4-content .underline{
     width: 100%;
@@ -302,7 +331,7 @@ html,body{
 .page5{
     min-height: 100vh;
     width: 100%;
-    background-color: #262424;
+    background-color: #151515;
      padding-top: 10vh;
      position: relative;
 }
@@ -357,3 +386,52 @@ html,body{
     -webkit-text-stroke: 1px #fff;
     color: transparent;
 }
+
+.footer{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-left: 28vw;
+    padding-right: 3vw;
+    background-color: #151515;
+}
+.footer h1{
+     width: 100%;
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+}
+.footer h1::before{
+    content: "04";
+    position: absolute;
+    font-size: 3vw;
+    font-family: silk;
+    left: -15%;
+    font-weight: 600;
+    top: 7%;
+}
+.underline{
+    width: 100%;
+    border: 0.5px solid #fff;
+    margin-top: 12vh;
+}
+.footer .footer-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-right: 15vw;
+    padding-top: 7vw;
+}
+.footer-div h6{
+    font-size: 1vw;
+    margin-bottom: 2vw;
+}
+.footer-div h5{
+    font-size: 1.5vw;
+     font-weight: 300;
+}
+#copy{
+    margin-top: 2vw;
+    font-weight: 400;
+}
+
